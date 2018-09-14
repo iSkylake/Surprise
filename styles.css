@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	background-color: #2d2d2d;
+}
+
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #2d2d2d;
+}
+
+/* PASSWORD */
+
+.password-container {
+	z-index: 10;
+	transition: opacity 0.8s 0.8s;
+}
+
+.password-form {
+	display: flex;
+	flex-direction: column;
+	border: solid 2px #FF0080;
+	padding: 20px;
+	border-radius: 10px;
+	align-items: center;
+	transition: transform 0.8s;
+}
+
+.password-header {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+	color: #FF0080;
+}
+
+.password-input {
+	border: solid 2px #FF0080;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	padding: 3px;
+	background-color: #2d2d2d;
+	color: #FFF;
+	text-align: center;
+	font-size: 1rem;
+}
+
+.password-hint {
+	font-size: 0.6rem;
+	padding-bottom: 10px;
+	color: #FF0080;
+}
+
+.password-submit {
+	border: solid 1px #FF0080;
+	color: #FFF;
+	background-color: #FF0080;
+	padding: 8px;
+	font-size: 0.9rem;
+	border-radius: 10px;
+	color: #2d2d2d;
+}
+
+.password-input:focus, .password-submit:focus {
+	outline: none;
+}
+
+/* SECRETS */
+
+.secret-container {
+	position: absolute;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.secret-gif {
+	max-width: 80%;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+.secret-text {
+	color: #FF0080;
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+}
+
+.previous-btn {
+	color: #FFF;
+	position: absolute;
+	left: 2%;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2.5rem;
+	z-index: 15;
+	/*opacity: 0;*/
+	display: none;
+	transition: opacity 1s 0.8s;
+}
+
+.next-btn {
+	color: #FFF;
+	position: absolute;
+	right: 2%;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2.5rem;
+	z-index: 15;
+	opacity: 0;
+	transition: opacity 1s 0.8s;
+}
+
+/* ANIMATIONS */
+
+.shake {
+	animation: shake 0.3s;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(5deg);
+	}
+
+	25% {
+		transform: rotate(-5deg);
+	}
+
+	50% {
+		transform: rotate(5deg);
+	}
+
+	75% {
+		transform: rotate(-5deg);
+	}
+
+	100% {
+		transform: rotate(5deg);
+	}
+}
+
+@media only screen and (max-height: 400px) {
+	.secret-gif {
+		max-width: 40%;
+	}
+}
