@@ -8,7 +8,8 @@ let nextBtn = document.getElementsByClassName('next-btn')[0];
 
 let password = '123456';
 
-passSubmit.addEventListener('click', function(){
+passSubmit.addEventListener('click', function(e){
+	e.preventDefault();
 	if(passInput.value.toLowerCase() !== password){
 		passForm.classList.remove('shake');
 		window.requestAnimationFrame(function() {
@@ -19,7 +20,7 @@ passSubmit.addEventListener('click', function(){
 		passForm.style.transform = "scale(0)";
 		passContainer.style.opacity = 0;
 		secretContainer[0].style.opacity = 1;
-		nextBtn.style.opacity = 1;
+		// nextBtn.style.opacity = 1;
 		// previousBtn.style.opacity = 1;
 	}
 });
